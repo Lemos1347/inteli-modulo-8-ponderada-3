@@ -49,7 +49,7 @@ void ChatBot::interpret_command(const std::string &command)
    {
       std::cout << match[2].str() << " é logo ali me siga que te levo lá! \n" << std::endl;
    }
-   if (std::regex_search(command, this->regexs_[1]))
+   else if (std::regex_search(command, this->regexs_[1]))
    {
       std::cout << "\033[32m Você acionou AJUDA. Cá está o que posso fazer:\033[0m" << std::endl;
 
@@ -63,8 +63,11 @@ void ChatBot::interpret_command(const std::string &command)
       std::cout << "\033[34m --> Irei lhe falar o que estou fazendo \033[0m \n\n" << std::endl;
       
    }
-   if (std::regex_search(command, this->regexs_[2]))
+   else if (std::regex_search(command, this->regexs_[2]))
    {
       std::cout << "Estou esperando pelo seu comando!" << std::endl;
+   } 
+   else {
+      std::cout << "Não entendi o que você falou, consegue repetir?" << std::endl;
    }
 };
