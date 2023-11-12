@@ -9,6 +9,7 @@ class ChatBot : public rclcpp::Node
 {
 private:
    std::vector<std::regex> regexs_;
+   std::map<int, std::function<void(std::smatch&)>> actions_;
 
 public:
    ChatBot();
